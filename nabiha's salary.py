@@ -24,3 +24,8 @@ def calculate_allocations(salary, percentages):
     yearly_electricity = allocations['Electricity'] * 12 
     return allocations, total_expenses, remainder, yearly_rent, yearly_electricity
     #i used two dictionaries to store the allocations and the percentages 
+
+def extra_calculations(salary, savings_amount): #this function is used to calculate the square of the salary and the leftover from the random savings
+    random_savings = 50 
+    leftover_from_random_savings = random_savings / savings_amount if savings_amount else 0 
+    return salary ** 2, leftover_from_random_savings 
