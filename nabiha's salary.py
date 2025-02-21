@@ -41,3 +41,16 @@ def display_results(month, salary, allocations, total_expenses, remainder, yearl
          print(f"Yearly Electricity Estimate: ${yearly_electricity:.2f}")
          print(f"Salary Squared (Just for Fun!): {squared_salary:.2f}")
          print(f"Leftover from Additional Savings: ${leftover_from_random_savings:.2f}")
+#this function is used to call all the functions and display the results
+def main():
+ salary, month = get_salary_details() #this function is used to get the salary details from the user
+ percentages = get_percentages() #this function is used to get the percentages of the rent, savings and electricity
+ allocations, total_expenses, remainder, yearly_rent, yearly_electricity = calculate_allocations(salary, percentages)#this function is used to calculate the allocations, total expenses, remainder, yearly rent and yearly electricity 
+ squared_salary, leftover_from_random_savings = extra_calculations(salary, allocations['Savings']) #this function is used to calculate the square of the salary and the leftover from the random savings
+ display_results(month, salary, allocations, total_expenses, remainder, yearly_rent, yearly_electricity, squared_salary, leftover_from_random_savings) #this function is used to display the results of the salary report
+
+  
+
+if __name__ == "__main__":#this is used to call the main function
+ main()      #this is used to call the main function   
+ 
