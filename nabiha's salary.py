@@ -13,4 +13,14 @@ def get_percentages():
         "rent": rent_percentage,
         "electricity": electricity_percentage
         }
-   #this dictionary is used to store the percentages of the rent, savings and electricity     
+   #this dictionary is used to store the percentages of the rent, savings and electricity    
+
+   #this function is used to calculate the allocations, total expenses, remainder, yearly rent and yearly electricity
+def calculate_allocations(salary, percentages):
+    allocations = {category: salary * percentages[category] for category in percentages} 
+    total_expenses = sum(allocations.values()) 
+    remainder = salary - total_expenses 
+    yearly_rent = allocations['Rent'] * 12 
+    yearly_electricity = allocations['Electricity'] * 12 
+    return allocations, total_expenses, remainder, yearly_rent, yearly_electricity
+    #i used two dictionaries to store the allocations and the percentages 
